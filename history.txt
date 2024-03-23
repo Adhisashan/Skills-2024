@@ -1,0 +1,575 @@
+    1  sestatus
+    2  cd /etc/
+    3  nano selinux
+    4  cd /etc/selinux
+    5  nano config
+    6  sestatus
+    7  setenforce 0
+    8  sestatus
+    9  screen -S rsync_2017 rsync -avz -e 'ssh -o "StrictHostKeyChecking=no" -p 22' root@52.117.163.66:/disk2/TEXT_SEARCH/MANTICORE/2017/* /disk1/TEXT_SEARCH/MANTICORE/2017/
+   10  clear
+   11  screen -S rsync_2018 rsync -avz -e 'ssh -o "StrictHostKeyChecking=no" -p 22' root@52.117.163.66:/disk2/TEXT_SEARCH/MANTICORE/2018/* /disk1/TEXT_SEARCH/MANTICORE/2018/
+   12  screen -S rsync_2019 rsync -avz -e 'ssh -o "StrictHostKeyChecking=no" -p 22' root@52.117.163.66:/disk2/TEXT_SEARCH/MANTICORE/2019/* /disk1/TEXT_SEARCH/MANTICORE/2019/
+   13  screen -S rsync_2020 rsync -avz -e 'ssh -o "StrictHostKeyChecking=no" -p 22' root@52.117.163.66:/disk2/TEXT_SEARCH/MANTICORE/2020/* /disk1/TEXT_SEARCH/MANTICORE/2020/
+   14  screen -S rsync_2021 rsync -avz -e 'ssh -o "StrictHostKeyChecking=no" -p 22' root@52.117.163.66:/disk2/TEXT_SEARCH/MANTICORE/2021/* /disk1/TEXT_SEARCH/MANTICORE/2021/
+   15  screen -S rsync_2022 rsync -avz -e 'ssh -o "StrictHostKeyChecking=no" -p 22' root@52.117.163.66:/disk2/TEXT_SEARCH/MANTICORE/2022/* /disk1/TEXT_SEARCH/MANTICORE/2022/
+   16  screen -S rsync_2023 rsync -avz -e 'ssh -o "StrictHostKeyChecking=no" -p 22' root@52.117.163.66:/disk2/TEXT_SEARCH/MANTICORE/2023/* /disk1/TEXT_SEARCH/MANTICORE/2023/
+   17  clear
+   18  screen -ls
+   19  screen -dmS Manti_catalog /usr/bin/indexer --config /disk2/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf GmIndex_catalog_1
+   20  screen -ls
+   21  screen -dmS Manti_catalog /usr/bin/indexer --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf GmIndex_catalog_1
+   22  screen -ls
+   23  screen -r 79013
+   24  clear
+   25  du -hs /disk1/TEXT_SEARCH/MANTICORE
+   26  screen -ls
+   27  du -hs /disk1/TEXT_SEARCH/MANTICORE
+   28  htop
+   29  screen -ls
+   30  /usr/bin/searchd --config /disk2/TEXT_SEARCH/MANTICORE/Manticore_2017_span.conf
+   31  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2017_span.conf
+   32  rm -rf /var/lib/manticore/*
+   33  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2018_span.conf
+   34  rm -rf /var/lib/manticore/*
+   35  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2019_span.conf
+   36  rm -rf /var/lib/manticore/*
+   37  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2020_span.conf
+   38  rm -rf /var/lib/manticore/*
+   39  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2021_span.conf
+   40  rm -rf /var/lib/manticore/*
+   41  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2022_span.conf
+   42  rm -rf /var/lib/manticore/*
+   43  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf
+   44  rm -rf /var/lib/manticore/*
+   45  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf
+   46  rm -rf /var/lib/manticore/*
+   47  htop
+   48  .usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2017_complete.conf
+   49  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2017_complete.conf
+   50  rm -rf /var/lib/manticore/*
+   51  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2018_complete.conf
+   52  rm -rf /var/lib/manticore/*
+   53  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2019_complete.conf
+   54  rm -rf /var/lib/manticore/*
+   55  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2020_complete.conf
+   56  rm -rf /var/lib/manticore/*
+   57  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2021_complete.conf
+   58  rm -rf /var/lib/manticore/*
+   59  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2022_complete.conf
+   60  rm -rf /var/lib/manticore/*
+   61  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_complete.conf
+   62  rm -rf /var/lib/manticore/*
+   63  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf
+   64  rm -rf /var/lib/manticore/*
+   65  /usr/bin/searchd --config /disk2/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf
+   66  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf
+   67  mount /dev/sdb /disk1
+   68  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2017_span.conf
+   69  rm -rf /var/lib/manticore/*
+   70  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2018_span.conf
+   71  rm -rf /var/lib/manticore/*
+   72  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2019_span.conf
+   73  rm -rf /var/lib/manticore/*
+   74  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2020_span.conf
+   75  rm -rf /var/lib/manticore/*
+   76  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2021_span.conf
+   77  rm -rf /var/lib/manticore/*
+   78  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2022_span.conf
+   79  rm -rf /var/lib/manticore/*
+   80  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf
+   81  rm -rf /var/lib/manticore/*
+   82  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf
+   83  rm -rf /var/lib/manticore/*
+   84  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2017_complete.conf
+   85  rm -rf /var/lib/manticore/*
+   86  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2018_complete.conf
+   87  rm -rf /var/lib/manticore/*
+   88  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2019_complete.conf
+   89  rm -rf /var/lib/manticore/*
+   90  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2020_complete.conf
+   91  rm -rf /var/lib/manticore/*
+   92  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2021_complete.conf
+   93  rm -rf /var/lib/manticore/*
+   94  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2022_complete.conf
+   95  rm -rf /var/lib/manticore/*
+   96  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_complete.conf
+   97  rm -rf /var/lib/manticore/*
+   98  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf
+   99  exit
+  100  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf
+  101  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf
+  102  rm -rf /var/lib/manticore/*
+  103  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf
+  104  htop
+  105  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf --stopwait
+  106  exit
+  107  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf --stopwait
+  108  htop
+  109  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf
+  110  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf
+  111  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf --stopwait
+  112  rm -rf /var/lib/manticore/*
+  113  htop
+  114  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf
+  115  rm -rf /var/lib/manticore/*
+  116  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf
+  117  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf --stopwait
+  118  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf
+  119  ps aux | grep searchd
+  120  telnet 127.0.0.1 9371
+  121  yum install telnet
+  122  telnet 127.0.0.1 9371
+  123  telnet 127.0.0.1 9372
+  124  telnet 127.0.0.1 9373
+  125  sestatus
+  126  nmap -sT -O localhost
+  127  yum install nmap
+  128  nmap -sT -O localhost
+  129  netstat -anp | grep 9371
+  130  nano /etc/services
+  131  ping 10.128.0.9
+  132  sestatus
+  133  telnet 127.0.0.1 9371
+  134  netstat -anp | grep 9302
+  135  netstat -anp | grep 9371
+  136  iptables -A INPUT -m state --state NEW -p tcp --dport 9371 -j ACCEPT
+  137  netstat -anp | grep 9371
+  138  yum install lsof
+  139  lsof -i | grep 9371
+  140  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf --stopwait
+  141  rm -rf /var/lib/manticore/*
+  142  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf
+  143  lsof -i | grep 9371
+  144  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf --stopwait
+  145  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf --stopwait
+  146  rm -rf /var/lib/manticore/*
+  147  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf
+  148  rm -rf /var/lib/manticore/*
+  149  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf
+  150  screen -ls
+  151  exit
+  152  screen -ls
+  153  screen -dmS Manti_span /usr/bin/indexer --config /disk2/TEXT_SEARCH/MANTICORE/Manticore_span.conf GmIndex_span
+  154  screen -ls
+  155  /usr/bin/indexer --config /disk2/TEXT_SEARCH/MANTICORE/Manticore_span.conf GmIndex_span
+  156  screen -dmS Manti_span /usr/bin/indexer --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span.conf GmIndex_span
+  157  screen -ls
+  158  screen -dmS Manti_complete /usr/bin/indexer --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf GmIndex_complete
+  159  screen -ls
+  160  screen -r 9323
+  161  clear
+  162  free -g
+  163  sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
+  164  free -g
+  165  exit
+  166  free -g
+  167  sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
+  168  free -g
+  169  screen -ls
+  170  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf
+  171  rm -rf /var/lib/manticore/*
+  172  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf
+  173  htop
+  174  screen -ls
+  175  screen -r 9319
+  176  clear
+  177  free -g
+  178  exit
+  179  screen -ls
+  180  screen -r 9319
+  181  clear
+  182  free -g
+  183  sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
+  184  free -g
+  185  exit
+  186  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span.conf
+  187  rm -rf /var/lib/manticore/*
+  188  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span.conf
+  189  htop
+  190  exit
+  191  curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+  192  ping 10.128.0.9
+  193  df -H
+  194  fdisk -l
+  195  mount /dev/sdb /disk1
+  196  exit
+  197  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2017_span.conf
+  198  rm -rf /var/lib/manticore/*
+  199  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2018_span.conf
+  200  rm -rf /var/lib/manticore/*
+  201  cd /disk1/TEXT_SEARCH
+  202  sh sphinx.sh
+  203  exit
+  204  ping 104.197.9.26
+  205  exit
+  206  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf --stopwait
+  207  htop
+  208  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf --stopwait
+  209  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span.conf --stopwait
+  210  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf --stopwait
+  211  htop
+  212  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf
+  213  screen -ls
+  214  htop
+  215  cd /disk1/TEXT_SEARCH/MANTICORE/COMPLETE
+  216  sudo chmod -R 777 log
+  217  htop
+  218  df -h
+  219  free -g
+  220  yum install mysql
+  221  mysql
+  222  mysql -P 9372 -h  127.0.0.1
+  223  exit
+  224  screen -dmS Manti_complete /usr/bin/indexer --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf GmIndex_complete --rotate
+  225  screen -ls
+  226  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span.conf --stopwait
+  227  screen -dmS Manti_span /usr/bin/indexer --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span_2.conf GmIndex_2023_span_2
+  228  screen -ls
+  229  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2017_complete.conf --stopwait
+  230  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2018_complete.conf --stopwait
+  231  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2019_complete.conf --stopwait
+  232  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2020_complete.conf --stopwait
+  233  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2021_complete.conf --stopwait
+  234  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2022_complete.conf --stopwait
+  235  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_complete.conf --stopwait
+  236  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete_daemon.conf --stopwait
+  237  htop
+  238  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf --stopwait
+  239  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf
+  240  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span_2.conf
+  241  rm -rf /var/lib/manticore/*
+  242  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span_2.conf
+  243  ping 10.128.0.9
+  244  ping 10.0.4.2
+  245  ping 34.72.51.69
+  246  exit
+  247  fdisk -l
+  248  mount /dev/sdb /disk1
+  249  df -H
+  250  exit
+  251  screen -ls
+  252  screen -dmS Manti_complete /usr/bin/indexer --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf GmIndex_complete --rotate
+  253  cd /disk1/TEXT_SEARCH
+  254  sh sphinx.sh
+  255  screen -dmS Manti_span_2023 /usr/bin/indexer --config /disk2/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf GmIndex_2023_span_1 --rotate
+  256  screen -ls
+  257  /usr/bin/indexer --config /disk2/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf GmIndex_2023_span_1 --rotate
+  258  screen -dmS Manti_span_2023 /usr/bin/indexer --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf GmIndex_2023_span_1 --rotate
+  259  screen -ls
+  260  exit
+  261  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf
+  262  rm -rf /var/lib/manticore/*
+  263  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf
+  264  screen -ls
+  265  free -g
+  266  sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
+  267  free -g
+  268  htop
+  269  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf
+  270  rm -rf /var/lib/manticore/*
+  271  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf
+  272  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf --stopwait
+  273  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf
+  274  mysql -P 9372 -h 127.0.0.1
+  275  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf --stopwait
+  276  rm -rf /var/lib/manticore/*
+  277  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf
+  278  htop
+  279  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf --stopwait
+  280  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf 
+  281  htop
+  282  mysql -P9372 -h0
+  283  exit
+  284  cd /disk1/TEXT_SEARCH/MANTICORE
+  285  > /disk1/TEXT_SEARCH/MANTICORE/CATALOG/log/query.log
+  286  df -H
+  287  fdisk -l
+  288  history
+  289  mount /dev/sdb /disk1
+  290  cd /disk1/TEXT_SEARCH
+  291  sh sphinx.sh
+  292  exit
+  293  htop
+  294  screen -ls
+  295  htop
+  296  rm -rf /var/lib/manticore/*
+  297  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf --stopwait
+  298  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_complete.conf
+  299  htop
+  300  rm -rf /var/lib/manticore/*
+  301  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf
+  302  htop
+  303  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span_2.conf --stopwait
+  304  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf
+  305  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf --stopwait
+  306  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span_2.conf
+  307  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf --stopwait
+  308  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span.conf
+  309  rm -rf /var/lib/manticore/*
+  310  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf
+  311  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf --stopwait
+  312  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf
+  313  chown -R mylengg /disk1/TEXT_SEARCH/MANTICORE/DAEMON_SPAN/log/*
+  314  screen -dmS Manti_span_2023_2 /usr/bin/indexer --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span_2.conf GmIndex_2023_span_2 --rotate
+  315  screen -ls
+  316  exit
+  317  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf --stopwait
+  318  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_span_daemon.conf
+  319  free -g
+  320  sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
+  321  screen -ls
+  322  exit
+  323  screen -ls
+  324  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span_2.conf --stopwait
+  325  htop
+  326  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span_2.conf
+  327  rm -rf /var/lib/manticore/*
+  328  /usr/bin/searchd --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_2023_span_2.conf
+  329  screen -ls
+  330  df -H
+  331  fdisk -l
+  332  cd /
+  333  mkdir disk3
+  334  mount /dev/sdc /disk3
+  335  df -H
+  336  screen -ls
+  337  htop
+  338  df -h
+  339  cd /disk3/Mukesh/CD/CDControler
+  340  sh run.sh 
+  341  screen -ls
+  342  screen -S CDControler_EOD java -jar -Xms1024m -Xmx4096m FinanceLiveControler.jar
+  343  javac
+  344  cd /disk3/Mukesh
+  345  sudo chmod -R 777 CD
+  346  sudo chown mylengg CD
+  347  cd CD
+  348  sh copyFile.sh 
+  349  cd /disk3/Mukesh/CD
+  350  unzip CD_All.zip 
+  351  javac
+  352  cd /disk3/Mukesh/CD/CDControler
+  353  sh run.sh 
+  354  screen -ls
+  355  cd /opt
+  356  wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm
+  357  yum install jdk-17_linux-x64_bin.rpm
+  358  java -version
+  359  htop
+  360  cd /disk3/Mukesh/CD
+  361  sh CleanLog.sh 
+  362  clear
+  363  screen -ls
+  364  cd /disk3/Mukesh/CD/CDControler
+  365  sh run.sh 
+  366  clear
+  367  htop
+  368  cd ..
+  369  screen -ls
+  370  htop
+  371  screen -ls
+  372  screen -r 244679
+  373  cler
+  374  clear
+  375  sh CleanLog.sh 
+  376  cd CDControler/
+  377  sh run.sh 
+  378  clear
+  379  htop
+  380  cd /disk3/Mukesh/CD/CDControler/log
+  381  cp process.log process.log1
+  382  cd /disk3/Mukesh/CD/CDControler/log
+  383  cp process.log process.log2
+  384  screen -ls
+  385  cd /disk3/Mukesh/CD
+  386  sh rename_log.sh 
+  387  cd /disk3/Mukesh/CD/CDControler
+  388  sh run.sh 
+  389  clear
+  390  screen -ls
+  391  screen -r 1561064.
+  392  clear
+  393  sh run.sh 
+  394  cd /disk3/Mukesh/CD/CD_1/log
+  395  *
+  396  clear
+  397  rm -rf *
+  398  cd /disk3/Mukesh/CD/CDControler
+  399  sh run.sh 
+  400  cd /disk3/Mukesh/CD/CDControler/
+  401  sh run.sh 
+  402  cd /disk3/Mukesh/CD/CDControler/
+  403  sh run.sh 
+  404  clear
+  405  sh run.sh 
+  406  cd AND idx.form_type REGEXP ' '
+  407  cd /disk3/Mukesh/CD
+  408  sh CleanLog.sh 
+  409  sh copyJar.sh 
+  410  cd /disk3/Mukesh/CD/CDControler
+  411  sh run.sh 
+  412  clear
+  413  screen -ls
+  414  cd /disk3/Mukesh
+  415  cp /disk3/data2/CD_LINK/2023/DEF_14A
+  416  cd  /disk3/data2/CD_LINK/2023/DEF_14A/
+  417  cp 40718055.htm /disk3/Mukesh/
+  418  cd  /disk3/data2/LD_RawFiles/2023/DEF_14A
+  419  cp 0001193125-23-259247_d356108ddef14a.txt /disk3/Mukesh/
+  420  cd /disk3/Mukesh/CD/
+  421  screen -ls
+  422  sh copyJar.sh 
+  423  sh rename_log.sh 
+  424  cd /disk3/Mukesh/CD/CDControler
+  425  sh run.sh 
+  426  clear
+  427  screen -ls
+  428  screen -r  2143940
+  429  clear
+  430  cd /disk3/Mukesh/CD
+  431  sh rename_log.sh 
+  432  cd /disk3/Mukesh/CD/CDControler
+  433  sh run.sh 
+  434  clear
+  435  sh run.sh 
+  436  cd /disk3/Mukesh/CD
+  437  screen -r 2875253
+  438  clear
+  439  screen -ls
+  440  screen -r  2875352
+  441  clear
+  442  screen -ls
+  443  cd /disk3/Mukesh/CD
+  444  screen -ls
+  445  screen -r 2882495
+  446  clear
+  447  sh CleanLog.sh 
+  448  cd /disk3/Mukesh/CD/CDControler
+  449  sh run.sh 
+  450  clear
+  451  cd /disk3/Mukesh/CD
+  452  sh rename_log.sh 
+  453  sh copyJar.sh 
+  454  clear
+  455  cd /disk3/Mukesh/CD/CDControler
+  456  screen -ls
+  457  sh run.sh 
+  458  screen -ls
+  459  clear
+  460  screen -ls
+  461  screen -r 601354.CDControler_EOD
+  462  clear
+  463  cd /disk3/Mukesh/CD
+  464  sh copyJar.sh 
+  465  sh CleanLog.sh 
+  466  cd CDControler/
+  467  sh run.sh 
+  468  clear
+  469  screen -ls
+  470  screen -r  642045
+  471  clear
+  472  cd ..
+  473  sh copyJar.sh 
+  474  sh CleanLog.sh 
+  475  cd CDControler/
+  476  screen -ls
+  477  sh run.sh 
+  478  clear
+  479  screen -ls
+  480  cd /disk3/Mukesh/CD
+  481  sh rename_log.sh 
+  482  cd /disk3/Mukesh/CD
+  483  sh copyJar.sh 
+  484  sh copyFile.sh 
+  485  cd /disk3/Mukesh/CD/CDControler
+  486  sh run.sh 
+  487  clear
+  488  screen -ls
+  489  cd /disk3/Mukesh/CD/CDControler
+  490  sh run.sh 
+  491  cd /disk3/Mukesh/CD/CDControler
+  492  sh run.sh 
+  493  clear
+  494  cd /disk3/Mukesh/CD/CD_1/log
+  495  rm -rf *
+  496  cd /disk3/Mukesh/CD/CDControler
+  497  sh run.sh 
+  498  screen -ls
+  499  clear
+  500  screen -ls
+  501  cd ..
+  502  sh copyJar.sh 
+  503  sh CleanLog.sh 
+  504  screen -ls
+  505  screen -r 965347
+  506  clear
+  507  screen -ls
+  508  screen -r 965239
+  509  clear
+  510  cd /disk3/Mukesh/CD/CDControler
+  511  sh run.sh 
+  512  clear
+  513  htop
+  514  exit
+  515  cd /disk3/Mukesh/CD/CDControler
+  516  sh run.sh 
+  517  clear 
+  518  screen -ls
+  519  screen -r  965550
+  520  clear
+  521  cd /disk3/Mukesh/CD
+  522  sh copyJar.sh 
+  523  sh CleanLog.sh 
+  524  cd /disk3/Mukesh/CD/CDControler
+  525  sh run.sh 
+  526  clear
+  527  screen -ls
+  528  cd /disk3/Mukesh/CD
+  529  sh rename_log.sh 
+  530  cd /disk3/Mukesh/CD/CDControler
+  531  sh run.sh 
+  532  clear
+  533  screen -ls
+  534  cd /disk3/Mukesh/CD/DB
+  535  screen -L -S 238_mysql mysql gm_compliance -h34.70.245.148 -uld_engg -p
+  536   mysql gm_compliance -h34.70.245.148 -uld_engg -p
+  537  exit
+  538  cd /disk3/Mukesh/CD
+  539  sh rename_log.sh 
+  540  clear
+  541  cd /disk3/Mukesh/CD/CD_7
+  542  ls
+  543  screen -ls
+  544  free -g
+  545  sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
+  546  free -g
+  547  screen -ls
+  548  exit
+  549  mysql
+  550  mysql -h10.0.9.3 -uld_engg -p
+  551  mysql -h104.197.9.26 -uLD_Engg -p
+  552  mysql -h34.70.245.148 -uld_engg -p
+  553  mysql -version
+  554  service mysql status
+  555  mysql -v
+  556  yum install mysql
+  557  service mysql start
+  558  systemctl enable mariadb
+  559  systemctl enable mysql
+  560  systemctl enable mariadb
+  561  find / -name mysql
+  562  find / -name mariadb
+  563  history
+  564  screen -dmS Manti_catalog /usr/bin/indexer --config /disk1/TEXT_SEARCH/MANTICORE/Manticore_Catalog.conf GmIndex_catalog_1 --rotate
+  565  screen -ls
+  566  screen -r 3619932
+  567  clear
+  568  sudo -i
+  569  exit
+  570  service mysql start
+  571  systemctl enable mariadb
+  572  systemctl enable mysql
+  573  find / -name mysql
+  574  cd /disk1
+  575  history > history.txt
