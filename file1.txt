@@ -1,0 +1,41 @@
+
+git init
+	To initialize the git on the mapped folder
+git status
+	To get the status of the files which are tracked by git.
+git add .
+	To add the files which are to be tracked for changes.
+git commit -m "commit message"
+	to commit the changes, it will be available in the local.
+git remote add origin "https://github.com/user_name/repoName.git"
+	To map the remote repository to local folder
+git push origin master
+	master is the branch name. To inform to which branch we have to push the code.
+
+git clone "https://github.com/user_name/repoName.git"
+	to get the initial copy
+	
+git pull "https://github.com/user_name/repoName.git"
+	to get the latest changes
+
+	
+git branch
+	To list the branch if more than one branch is available.
+	
+git branch feature1
+    To create a new branch named feature1
+	
+git branch -D feature1
+	To delete branch named feature1
+	
+git log    or   gir log --graph --pretty=oneline
+    to list the commit details with commit id
+	
+git revert commit-id
+	to revert the changes to old id
+	
+git merge
+	to merge feature to main code
+	
+	
+	
