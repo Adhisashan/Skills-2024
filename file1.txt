@@ -21,21 +21,23 @@ git pull "https://github.com/user_name/repoName.git"
 	
 git branch
 	To list the branch if more than one branch is available.
-	
+
 git branch feature1
     To create a new branch named feature1
-	
+
+git checkout main
+   To change from 1 branch to another brach
+
 git branch -D feature1
 	To delete branch named feature1
-	
+
 git log    or   gir log --graph --pretty=oneline
     to list the commit details with commit id
-	
+
 git revert commit-id
 	to revert the changes to old id
-	
+
 git merge
 	to merge feature to main code
-	
 	
 	
