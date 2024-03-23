@@ -1,5 +1,3 @@
-first text
-
 
 git init
 	To initialize the git on the mapped folder
