@@ -6,10 +6,10 @@ git status
 git add .
 	To add the files which are to be tracked for changes.
 git commit -m "commit message"
-	to commit the changes, it will be available in the local.
+	to commit the changes, it will be available in the local
 git remote add origin "https://github.com/user_name/repoName.git"
 	To map the remote repository to local folder
-git push origin master
+git push origin master/main
 	master is the branch name. To inform to which branch we have to push the code.
 
 git clone "https://github.com/user_name/repoName.git"
