@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-04-17T12:49:56Z" name="Command line suite" finished-at="2024-04-17T12:49:57Z" duration-ms="32">
+    <groups>
+    </groups>
+    <test started-at="2024-04-17T12:49:56Z" name="Command line test" finished-at="2024-04-17T12:49:57Z" duration-ms="32">
+      <class name="basicsandthreading.LockCondition">
+        <test-method signature="main()[pri:0, instance:basicsandthreading.LockCondition@735b5592]" started-at="2024-04-17T12:49:56Z" name="main" finished-at="2024-04-17T12:49:57Z" duration-ms="19" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- main -->
+      </class> <!-- basicsandthreading.LockCondition -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
