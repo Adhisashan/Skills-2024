@@ -31,7 +31,7 @@ git checkout main
 git branch -D feature1
 	To delete branch named feature1
 
-git log    or   gir log --graph --pretty=oneline
+git log or gir log --graph --pretty=oneline
     to list the commit details with commit id
 
 git revert commit-id
@@ -40,4 +40,5 @@ git revert commit-id
 git merge
 	to merge feature to main code
 	
-	
+git config --global core.autocrlf false	
+	clear warnings Text File Format - CRLF/UTF 

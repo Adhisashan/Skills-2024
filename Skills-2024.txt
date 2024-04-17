@@ -7,8 +7,8 @@
    # Predicate & Functional programming - Ameer
    # How to bypass restricted websites - Adhi
 
-2. Spring Boot / Hibernate
-
+2. Spring Boot / Hibernate 
+     
 3. Microservices
 
 4. REST API
@@ -41,4 +41,7 @@ git pull https://github.com/Adhisashan/Skills-2024.git
 git add .
 git config --global user.email "adhisashan@gmail.com"
 git commit -m "Skill committed after changes"
+
 15. Pipeline
+
+16. CV Prepraing
