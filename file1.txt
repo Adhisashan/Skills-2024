@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 git init
 	To initialize the git on the mapped folder
@@ -46,3 +47,4 @@ git config --global core.autocrlf false
 git restore --staged <filename>	
 git restore <filename>	
         To restore the deleted files	
+
