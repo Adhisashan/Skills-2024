@@ -39,5 +39,3 @@ git revert commit-id
 
 git merge
 	to merge feature to main code
-	
-	
