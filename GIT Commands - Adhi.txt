@@ -1,0 +1,394 @@
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> master
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Skills- 2024.docx
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ~$ills- 2024.docx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git pull "https://github.com/Adhisashan/Skills-2024.git"
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 9 (delta 1), reused 9 (delta 1), pack-reused 0
+Unpacking objects: 100% (9/9), 1.22 KiB | 47.00 KiB/s, done.
+From https://github.com/Adhisashan/Skills-2024
+ * branch            HEAD       -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+ file1.txt | 41 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 41 insertions(+)
+ create mode 100644 file1.txt
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Skills- 2024.docx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git commit -m "changes in doc file"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Skills- 2024.docx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git add .
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git commit -m "changes in doc file"
+[master ad0e386] changes in doc file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push origin master
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'origin'
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git add .
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Skills-2024.txt
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git commit -m "changes in skills-24 txt file"
+[master 8555d6d] changes in skills-24 txt file
+ 1 file changed, 44 insertions(+)
+ create mode 100644 Skills-2024.txt
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push "https://github.com/Adhisashan/Skills-2024.git"
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream https://github.com/Adhisashan/Skills-2024.git master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git remote add origin https://github.com/Adhisashan/Skills-2024.git
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push origin master
+info: please complete authentication in your browser...
+Enumerating objects: 15, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (11/11), 17.21 KiB | 5.74 MiB/s, done.
+Total 11 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Adhisashan/Skills-2024/pull/new/master
+remote:
+To https://github.com/Adhisashan/Skills-2024.git
+ * [new branch]      master -> master
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push --set-upstream origin master
+branch 'master' set up to track 'origin/master'.
+Everything up-to-date
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push
+Everything up-to-date
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git branch -D main
+error: branch 'main' not found
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git add .
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git branch -r
+  origin/master
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git branch
+* master
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        history.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git add .
+warning: in the working copy of 'history.txt', LF will be replaced by CRLF the next time Git touches it
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   history.txt
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git commit
+Aborting commit due to empty commit message.
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git commit
+[master 2eff9e8] adhi history - sample
+ 1 file changed, 575 insertions(+)
+ create mode 100644 history.txt
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git push
+Enumerating objects: 26, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (23/23), done.
+Writing objects: 100% (26/26), 33.21 KiB | 5.54 MiB/s, done.
+Total 26 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Adhisashan/Skills-2024/pull/new/master
+remote:
+To https://github.com/Adhisashan/Skills-2024.git
+ * [new branch]      master -> master
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git branch
+* master
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git branch main
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git branch
+  main
+* master
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (master)
+$ git checkout main
+Switched to branch 'main'
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git branch -D master
+Deleted branch master (was 2eff9e8).
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git branch
+* main
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git add .
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file1.txt
+        deleted:    history.txt
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git commit -m "Changes in file.txt"
+[main 5c02f2a] Changes in file.txt
+ 2 files changed, 8 insertions(+), 581 deletions(-)
+ delete mode 100644 history.txt
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git push origin main
+To https://github.com/Adhisashan/Skills-2024.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Adhisashan/Skills-2024.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 892 bytes | 446.00 KiB/s, done.
+From https://github.com/Adhisashan/Skills-2024
+ * [new branch]      main       -> origin/main
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git push origin main
+To https://github.com/Adhisashan/Skills-2024.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/Adhisashan/Skills-2024.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git pull https://github.com/Adhisashan/Skills-2024.git
+From https://github.com/Adhisashan/Skills-2024
+ * branch            HEAD       -> FETCH_HEAD
+Merge made by the 'ort' strategy.
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git push origin main
+Enumerating objects: 8, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 514 bytes | 514.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To https://github.com/Adhisashan/Skills-2024.git
+   c28be4e..5bf2905  main -> main
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git push --set-upstream origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$ git push
+Everything up-to-date
+
+adhim@ADHI MINGW64 ~/OneDrive/Desktop/Skills-2024 (main)
+$

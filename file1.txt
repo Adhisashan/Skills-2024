@@ -42,3 +42,7 @@ git merge
 	
 git config --global core.autocrlf false	
 	clear warnings Text File Format - CRLF/UTF 
+	
+git restore --staged <filename>	
+git restore <filename>	
+        To restore the deleted files	
