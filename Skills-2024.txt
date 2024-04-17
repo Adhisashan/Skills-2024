@@ -1,3 +1,52 @@
+<<<<<<< HEAD
+				Preparation
+1.Java
+   # Versions and comparison across versions (Newly added features) - Balan
+   # Java Basic concepts - Collections & its types (Eg: Arraylist, List, Set, Map, Hashmap, Vector) - Balan
+   # Threading - Adhi
+   # Exception handling - Ramesh
+   # Predicate & Functional programming - Ameer
+   # How to bypass restricted websites - Adhi
+
+2. Spring Boot / Hibernate 
+     
+3. Microservices
+
+4. REST API
+
+5. Swagger & Postman
+
+6. Artificial Intelligence
+
+7. Python
+
+8. Machine Learning
+
+9. Deep Learning
+
+10. DevOps
+
+11. Data Scientist
+
+12. MongoDB
+
+13. React & Node js
+
+14. Github – Ameer
+2024-03-21:
+Download link: https://git-scm.com/download/win
+Open Cmd in Run
+cd location
+git init (The dir may be hidden, so click View->Enable Hidden Items)
+git pull https://github.com/Adhisashan/Skills-2024.git
+git add .
+git config --global user.email "adhisashan@gmail.com"
+git commit -m "Skill committed after changes"
+
+15. Pipeline
+
+16. CV Prepraing
+=======
 				Preparation
 1.Java
    # Versions and comparison across versions (Newly added features) - Balan
@@ -43,3 +92,4 @@ git add .
 git config --global user.email "adhisashan@gmail.com"
 git commit -m "Skill committed after changes"
 15. Pipeline
+>>>>>>> fa7d7db7b9e137a717991a19dfc89b60692fa0e2
