@@ -1,0 +1,95 @@
+1. How do you ensure that the N thread can access N resources without deadlock ?
+    Ordering, if you acquire resources in a particular order and release resources in the reverse order you can prevent deadlock
+    
+    
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class DeadlockAvoidanceExample {
+    // Define two locks
+    private static final Lock lock1 = new ReentrantLock();
+    private static final Lock lock2 = new ReentrantLock();
+
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(new Worker1());
+        Thread thread2 = new Thread(new Worker2());
+        thread1.start();
+        thread2.start();
+    }
+
+    private static class Worker1 implements Runnable {
+        @Override
+        public void run() {
+            lock1.lock();
+            System.out.println("Worker 1 acquired lock1");
+
+            try {
+                // Introducing a delay to allow Worker 2 to acquire lock2
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                lock2.lock();
+                System.out.println("Worker 1 acquired lock2");
+
+                // Do some work
+
+                lock2.unlock();
+                System.out.println("Worker 1 released lock2");
+            } finally {
+                lock1.unlock();
+                System.out.println("Worker 1 released lock1");
+            }
+        }
+    }
+
+    private static class Worker2 implements Runnable {
+        @Override
+        public void run() {
+            lock2.lock();
+            System.out.println("Worker 2 acquired lock2");
+
+            try {
+                // Introducing a delay to allow Worker 1 to acquire lock1
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                lock1.lock();
+                System.out.println("Worker 2 acquired lock1");
+
+                // Do some work
+
+                lock1.unlock();
+                System.out.println("Worker 2 released lock1");
+            } finally {
+                lock2.unlock();
+                System.out.println("Worker 2 released lock2");
+            }
+        }
+    }
+}
+
+2. 
+Consider the following Java code snippet, which is initializing two variables and both are not volatile, and two threads T1 and T2 are modifying these values as follows, both are not synchronized
+int x = 0;
+boolean bExit = false;
+
+Thread 1 (not synchronized)
+x = 1; 
+bExit = true;
+
+Thread 2 (not synchronized)
+if (bExit == true) 
+System.out.println("x=" + x);
+Now tell us, is it possible for Thread 2 to print “x=0”?
+
+Answer: It's impossible for a list of tricky Java questions to not contain anything from multi-threading. This is the simplest one I can get. The answer to this question is Yes, It's possible that thread T2 may print x=0. Why? because without any instruction to compiler e.g. synchronized or volatile, bExit=true might come before x=1 in compiler reordering. Also, x=1 might not become visible in Thread 2, so Thread 2 will load x=0. Now, how do you fix it?
+
+When I asked this question to a couple of programmers they answer differently, one suggests making both threads synchronized on a common mutex, another one said to make both variables volatile. Both are correct, as they will prevent reordering and guarantee visibility.
+
+But the best answer is you just need to make bExit as volatile, then Thread 2 can only print “x=1”. x does not need to be volatile because x cannot be reordered to come after bExit=true when bExit is volatile.
