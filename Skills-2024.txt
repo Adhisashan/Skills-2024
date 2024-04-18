@@ -7,8 +7,9 @@
    # Predicate & Functional programming - Ameer
    # How to bypass restricted websites - Adhi
 
-2. Spring Boot / Hibernate 
-     
+2. Spring Boot / Hibernate
+    # Tight /Loose coupling (Interface concepts) - Ameer
+
 3. Microservices
 
 4. REST API
@@ -18,6 +19,7 @@
 6. Artificial Intelligence
 
 7. Python
+    # Basic - Adhi
 
 8. Machine Learning
 
